@@ -1,36 +1,30 @@
-import React from "react";
-// react components used to create a google map
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import React, { Component } from "react";
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 
-const CustomMap = withScriptjs(
-  withGoogleMap(props => (
-    <GoogleMap
-      defaultZoom={13}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
-      defaultOptions={{
-        scrollwheel: false,
-        zoomControl: true
-      }}
-    >
-      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
-    </GoogleMap>
-  ))
-);
+class Maps extends Component {
+  constructor() {
+    super();
+    this.state = {
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 13
+    }
+  }
 
-function Maps({ ...prop }) {
-  return (
-    <CustomMap
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
-  );
+  render() {
+    const position = [this.state.lat, this.state.lng];
+    return (
+      <Map center={position} zoom={this.state.zoom}>
+        {/* <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+        />
+        <Marker position={position}>
+          <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup> 
+        </Marker>*/}
+      </Map>
+    );
+  }
 }
 
 export default Maps;

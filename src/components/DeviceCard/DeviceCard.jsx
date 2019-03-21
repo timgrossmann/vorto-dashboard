@@ -30,15 +30,17 @@ export class DeviceCard extends Component {
         <div className="content">
           <Row>
             <Col xs={12}>
-              <div className="icon-big text-center icon-warning">
-                <img src={this.props.device.imgSrc} width="100%"/>
+              {/*TODO fix css*/}
+              <div className="text-center">
+                <img className="deviceImg" src={this.props.device.imgSrc}/>
               </div>
             </Col>
           </Row>
-          <hr />
+
           <Row>
+            <hr />
             <Col xs={12}>
-              <div className="numbers">
+              <div>
                 <p className="text-center">{this.props.device.attributes.thingName}</p>
               </div>
             </Col>

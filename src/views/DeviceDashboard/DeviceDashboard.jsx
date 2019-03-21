@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "components/Card/Card.jsx";
 import { AttributesCard } from "components/AttributesCard/AttributesCard.jsx"
-import { StatsCard } from "components/StatsCard/StatsCard.jsx";
+import { CodeCard } from "components/CodeCard/CodeCard.jsx";
 import {
   dataPie,
   legendPie,
@@ -50,37 +50,17 @@ class DeviceDashboard extends Component {
           </Row>
 
           <Row>
-            <Col lg={3} sm={6}>
-                <StatsCard
-                  bigIcon={<i className="pe-7s-server text-warning" />}
-                  statsText="Capacity"
-                  statsValue="105GB"
-                  statsIcon={<i className="fa fa-refresh" />}
-                  statsIconText="Updated now"
-                />
-              </Col>
-              <Col lg={3} sm={6}>
-                <StatsCard
-                  bigIcon={<i className="pe-7s-wallet text-success" />}
-                  statsText="Revenue"
-                  statsValue="$1,345"
-                  statsIcon={<i className="fa fa-calendar-o" />}
-                  statsIconText="Last day"
-                />
-              </Col>
-              <Col lg={3} sm={6}>
-                <StatsCard
-                  bigIcon={<i className="pe-7s-graph1 text-danger" />}
-                  statsText="Errors"
-                  statsValue="23"
-                  statsIcon={<i className="fa fa-clock-o" />}
-                  statsIconText="In the last hour"
-                />
-            </Col>
-          </Row>
+            {Object.keys(this.state.device.attributes.schema)
+              .map(function(featureName) {
+                const features = this.state.device.features[featureName];
 
-          <Row>
-            {JSON.stringify(this.state.device.features)}
+                return (
+                  <Col lg={4} sm={6}>
+                    <CodeCard
+                      featureName={featureName}
+                      features={features} />
+                  </Col>)
+              }.bind(this))}
           </Row>
         </Grid>
       </div>

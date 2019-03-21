@@ -25,6 +25,7 @@ export class AttributesCard extends Component {
               </div>
             </Col>
             <Col xs={4}>
+            {/*TODO fix css*/}
               <div className="attrContainer">
                 <p><span className="attrKeyword">Created by: </span>{this.props.device.attributes.createdBy}</p>
                 <p><span className="attrKeyword">Definition: </span>{this.props.device.attributes.definition}</p>

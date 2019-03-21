@@ -1723,8 +1723,8 @@ body > .navbar-collapse[data-color="purple"]:after {
 .card {
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
-  margin-bottom: 30px;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  margin-bottom: 30px; }
   .card .image {
     width: 100%;
     overflow: hidden;
@@ -3005,13 +3005,12 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .deviceContainer {
   background: none;
-	border: none;
+  border: none;
   padding: 0;
   margin: 0;
-  -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0 0px 0px rgba(0,0,0,0.15);
-  box-shadow: 0 0px 0px rgba(0,0,0,0.15);
-
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
   -webkit-transition: box-shadow 0.2s ease-in-out;
   -moz-transition: box-shadow 0.2s ease-in-out;
   -ms-transition: box-shadow 0.2s ease-in-out;
@@ -3019,15 +3018,16 @@ body > .navbar-collapse[data-color="purple"]:after {
   transition: box-shadow 0.2s ease-in-out; }
 
 .deviceContainer:hover {
-  -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
 
 .attrKeyword {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .attrContainer {
-  height: 200px;
-}
+  height: 200px; }
+
+.deviceImg {
+  width: 100%;
+  max-height: 50%; }
