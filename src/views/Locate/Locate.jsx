@@ -20,7 +20,7 @@ class Maps extends Component {
   render() {
     return (
       <div className="fillHW">
-        <OSMap devices={this.state.devices}/>
+        <OSMap devices={this.state.devices} displayTooltip={true}/>
       </div>
     );
   }

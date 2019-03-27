@@ -30,12 +30,12 @@ export class DeviceTooltip extends Component {
     return (
       <div className="content">
         <div>
-            <h4><a href="javascript:;" onClick={this.renderRedirect}>{this.props.device.attributes.thingName}</a></h4>
+            <h4><a href="#" onClick={this.renderRedirect}>{this.props.device.attributes.thingName}</a></h4>
         </div>
         <Row>
           <Col xs={12}>
             <div className="text-center center-text">
-              <img src={this.props.device.imgSrc} height="100px"/>
+              <img alt="img of the device" src={this.props.device.imgSrc} height="100px"/>
             </div>
           </Col>
         </Row>

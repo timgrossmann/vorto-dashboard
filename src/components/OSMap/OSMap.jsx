@@ -14,7 +14,6 @@ class OSMap extends Component {
             <Map className="mapWrapper" center={position} zoom={12}>
                 <TileLayer
                     url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-                    //url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {/* TODO fix css for height */}
 
@@ -22,12 +21,16 @@ class OSMap extends Component {
                     const deviceLocStatus = device.features.location.properties.status
                     const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 
-                    return (
-                    <Marker position={position}>
-                        <Popup>
+                    const popUp = this.props.displayTooltip ? 
+                        (<Popup>
                             <DeviceTooltip device={device}/>
-                        </Popup> 
-                    </Marker>
+                        </Popup>) 
+                        : <div />;
+
+                    return (
+                        <Marker position={position}>
+                            {popUp} 
+                        </Marker>
                     )
                 })}
             </Map>

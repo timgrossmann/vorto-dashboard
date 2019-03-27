@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
-import { Redirect } from 'react-router-dom'
 
 export class AttributesCard extends Component {  
   render() {
