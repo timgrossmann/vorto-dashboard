@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-export class CodeCard extends Component {
+export class DistanceCard extends Component {
   render() {
     return (
       <div className="card card-stats attrCard">
@@ -18,10 +15,15 @@ export class CodeCard extends Component {
           </Row>
           <Row>
             <Col xs={12}>
-              <div className="">
-                <SyntaxHighlighter language='json' style={anOldHope}>
-                  {JSON.stringify(this.props.feature, null, 2)}
-                </SyntaxHighlighter>
+              <div className="barChartContainer">
+                <div className="innerBarChart" />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <div className="icon-big text-center">
+                {this.props.feature.properties.status.value.distance}
               </div>
             </Col>
           </Row>
@@ -31,4 +33,4 @@ export class CodeCard extends Component {
   }
 }
 
-export default CodeCard;
+export default DistanceCard;

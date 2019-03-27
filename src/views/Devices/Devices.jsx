@@ -11,7 +11,7 @@ class Devices extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     // TODO do the API call here
 
     const devices = TEST_DATA.map(device => {
@@ -47,6 +47,82 @@ export default Devices;
 
 
 const TEST_DATA = [
+  {
+    imgSrc: "http://images.bosch-professional.com/ng/en/productimages/usageimg/laser-measure-glm-120-c-164587-164587.png", 
+    thingId: "com.bosch.pt.glm120:62939",
+    policyId: "com.bosch.pt.glm120:62939",
+    attributes: {
+      schema: {
+        distance: "org.eclipse.vorto:Distance:1.0.0",
+        area: "org.eclipse.vorto:Area:1.0.0",
+        volume: "org.eclipse.vorto:Volume:1.0.0",
+        angle: "org.eclipse.vorto:Angle:1.0.0",
+
+      },
+      createdBy: "S-1-5-21-1937855695-3964793637-879644401-644964",
+      thingName: "BoschGLM120CProfessional",
+      definition: [
+        "com.bosch.pt:GLM120C:1.0.0"
+      ],
+      createdOn: "2019-03-18 01:24:49+0000",
+      deviceId: "com.bosch.pt.glm120:62939"
+    },
+    features: {
+      distance: {
+        definition: [
+          "org.eclipse.vorto:Distance:1.0.0"
+        ],
+        properties: {
+          status: {
+            value: {
+              distance: "27.329,152cm"
+            }
+          }
+        }
+      },
+      area:  {
+        definition: [
+          "org.eclipse.vorto:Area:1.0.0"
+        ],
+        properties: {
+          status: {
+            value: {
+              width: "5.145,572cm",
+              height: "7.678,237cm",
+              area: "39,508m²" 
+            }
+          }
+        }
+      },
+      volume:  {
+        definition: [
+          "org.eclipse.vorto:Volume:1.0.0"
+        ],
+        properties: {
+          status: {
+            value: {
+              width: "3.175,349cm",
+              height: "1.223,452cm",
+              depth: "6.231,123cm",
+              volume: "24207,209m³" 
+            }
+          }
+        }
+      },
+      angle:  {
+        definition: [
+          "org.eclipse.vorto:Angle:1.0.0"
+        ],
+        properties: {
+          status: {
+            value: {
+              angle: 5 
+            }
+          }
+        }
+      }
+    }
+  },
   {
     imgSrc: "http://vorto.eclipse.org/rest/default/models/org.raspberrypi:RaspberryOnboardSensor:1.0.0/images",
     thingId: "org.eclipse.vorto.demo:0102030405",
@@ -263,7 +339,9 @@ const TEST_DATA = [
         ],
         "properties": {
           "status": {
-            "altitude": 0
+            "altitude": 0,
+            latitude: 51.505,
+            longitude: -0.09
           }
         }
       },

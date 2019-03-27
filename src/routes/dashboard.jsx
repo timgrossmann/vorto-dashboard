@@ -1,5 +1,6 @@
 import Devices from "views/Devices/Devices";
 import DeviceDashboard from "views/DeviceDashboard/DeviceDashboard"
+import Locate from "views/Locate/Locate"
 
 const dashboardRoutes = [
   {
@@ -13,6 +14,12 @@ const dashboardRoutes = [
     name: "DeviceDashboard",
     component: DeviceDashboard,
     hidden: true
+  },
+  {
+    path: "/locate",
+    name: "Locate",
+    icon: "pe-7s-global",
+    component: Locate
   },
   { redirect: true, path: "/", to: "/devices", name: "Devices" }
 ];
