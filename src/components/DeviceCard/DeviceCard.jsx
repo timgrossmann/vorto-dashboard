@@ -11,14 +11,13 @@ export class DeviceCard extends Component {
     this.setState({
       redirect: true
     })
+
+    this.props.setSelectedDevice(this.props.device)
   }
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to={{
-        pathname: '/devicedashboard',
-        state: { device: this.props.device }
-      }} />
+      return <Redirect to='/devicedashboard' />
     }
   }
   

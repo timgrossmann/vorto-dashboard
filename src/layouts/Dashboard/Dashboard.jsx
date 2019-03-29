@@ -4,15 +4,9 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Header from "components/Header/Header";
 import Sidebar from "components/Sidebar/Sidebar";
 
-import { style } from "variables/Variables.jsx";
-
 import dashboardRoutes from "routes/dashboard.jsx";
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidUpdate(e) {
     if (
       window.innerWidth < 993 &&

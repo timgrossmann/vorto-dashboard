@@ -2,11 +2,21 @@ import { createStore } from "redux";
 
 import Reducers from "./reducers"
 import { TEST_DEVICES } from "./testDevices"
+import Actions from "./actions"
 
-export const INITAL_STATE = {
-    selectedDevice: "",
-    devices: TEST_DEVICES,
-    lastUpdated: "",  
-};
+export const store = createStore(Reducers);
 
-export const store = createStore(Reducers, INITAL_STATE);
+store.dispatch(Actions.selectDevice({}))
+store.dispatch(Actions.updateDevices(TEST_DEVICES))
+
+/*
+{
+    selectedDevice: {
+        ...
+    },
+    devices: {
+        lastUpdated: "...",
+        devices: [...]
+    }
+}
+*/

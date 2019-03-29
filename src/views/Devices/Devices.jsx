@@ -3,12 +3,21 @@ import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
 import { DeviceCard } from "components/DeviceCard/DeviceCard.jsx";
+import Actions from "../../actions"
 
 const mapStateToProps = state => {
-  return { devices: state.devices };
+  return { 
+    devices: state.devices.devices,
+  };
 };
 
-const ConnectedDevices = ({ devices }) => {
+function mapDispatchToProps(dispatch) {
+  return {
+    selectDevice: device => dispatch(Actions.selectDevice(device))
+  };
+}
+
+const ConnectedDevices = ({ devices, selectDevice }) => {
   return (
     <div className="content">
       {devices.length === 0 ?
@@ -21,6 +30,7 @@ const ConnectedDevices = ({ devices }) => {
               <Col lg={3} sm={6}>
                 <DeviceCard
                   device={device}
+                  setSelectedDevice={(device) => selectDevice(device)}
                 />
               </Col>
             );
@@ -31,6 +41,6 @@ const ConnectedDevices = ({ devices }) => {
   );
 }
 
-const Devices = connect(mapStateToProps)(ConnectedDevices);
+const Devices = connect(mapStateToProps, mapDispatchToProps)(ConnectedDevices);
 
 export default Devices;

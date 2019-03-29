@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { selectDevice, updateDevices } from "./devices.js"
+import { selectDevice, updateDevices } from "./reducers.js"
 
 export default combineReducers({
-    selectDevice,
-    updateDevices
+    selectedDevice: selectDevice,
+    devices: updateDevices,
 })

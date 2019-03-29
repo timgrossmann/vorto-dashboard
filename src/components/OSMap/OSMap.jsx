@@ -1,12 +1,31 @@
 import React, { Component } from "react";
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { Redirect } from 'react-router-dom'
 
 import DeviceTooltip from "components/DeviceTooltip/DeviceTooltip"
 
 class OSMap extends Component {
+    state = {
+        redirect: false
+    }
+
+    setRedirect = (device) => {
+        this.setState({
+            redirect: true,
+        })
+
+        this.props.setSelectedDevice(device)
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/devicedashboard' />
+        }
+    }
+  
     render() {
         const devices = this.props.devices;
-
+        
         const deviceLocStatus = devices[0].features.location.properties.status
         const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 
@@ -23,7 +42,10 @@ class OSMap extends Component {
 
                     const popUp = this.props.displayTooltip ? 
                         (<Popup>
-                            <DeviceTooltip device={device}/>
+                            <DeviceTooltip 
+                                device={device} 
+                                redirect={() => this.setRedirect(device)}
+                            />
                         </Popup>) 
                         : <div />;
 

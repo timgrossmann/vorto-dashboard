@@ -1,20 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import OSMap from "../../components/OSMap/OSMap";
+import Actions from "../../actions"
+
+function hasLocationFeature(device) {
+  return Object.keys(device.features)
+          .map(feature => device.features[feature].definition)
+          .filter(definitions => {
+            for (const definition of definitions) {
+              if (definition.toLowerCase().includes("location")) {
+                return true
+              }
+            }
+          })
+          .length > 0
+}
 
 const mapStateToProps = state => {
-  return { devices: state.devices };
+  return { 
+    devices: state.devices.devices.filter(hasLocationFeature)
+  };
 };
 
-const ConnectedMaps = ({ devices }) => {
+function mapDispatchToProps(dispatch) {
+  return {
+    selectDevice: device => dispatch(Actions.selectDevice(device))
+  };
+}
+
+const ConnectedMaps = ({ devices, selectDevice }) => {
   return (
     <div className="fillHW">
-      <OSMap devices={devices} displayTooltip={true}/>
+      <OSMap 
+        devices={devices} 
+        displayTooltip={true}
+        setSelectedDevice={(device) => selectDevice(device)}
+      />
     </div>
   );
 }
 
-const Maps = connect(mapStateToProps)(ConnectedMaps)
+const Maps = connect(mapStateToProps, mapDispatchToProps)(ConnectedMaps)
 
 export default Maps;

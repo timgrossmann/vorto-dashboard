@@ -1,27 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
-import { Redirect } from 'react-router-dom'
 
 export class DeviceTooltip extends Component {
-  state = {
-    redirect: false
-  }
-
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    })
-  }
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to={{
-        pathname: '/devicedashboard',
-        state: { device: this.props.device }
-      }} />
-    }
-  }
-  
   render() {
     const locationFeature = this.props.device.features.location
     const latitude = locationFeature.properties.status.latitude
@@ -30,7 +10,7 @@ export class DeviceTooltip extends Component {
     return (
       <div className="content">
         <div>
-            <h4><a href="#" onClick={this.renderRedirect}>{this.props.device.attributes.thingName}</a></h4>
+            <h4><button className="textButton" onClick={this.props.redirect}>{this.props.device.attributes.thingName}</button></h4>
         </div>
         <Row>
           <Col xs={12}>
