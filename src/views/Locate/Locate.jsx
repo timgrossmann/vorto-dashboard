@@ -13,6 +13,7 @@ function hasLocationFeature(device) {
                 return true
               }
             }
+            return false
           })
           .length > 0
 }

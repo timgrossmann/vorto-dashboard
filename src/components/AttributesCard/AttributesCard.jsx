@@ -12,7 +12,7 @@ export class AttributesCard extends Component {
           <Row>
             <Col xs={4}>
               <div className="">
-                <img src={this.props.device.imgSrc} height="200px"/>
+                <img src={this.props.device.imgSrc} alt="IoT device" height="200px"/>
               </div>
             </Col>
             <Col xs={4}>

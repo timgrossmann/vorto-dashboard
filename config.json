@@ -1,0 +1,7 @@
+{
+    "things": {
+        "client_id": "904f3717-f158-4658-bb94-44a99c0c3869",
+        "client_secret": "4A7B56B6A42B98D679710FBE74593B7C",
+        "scope": "iot-things-eu-1:c6cd7405-0865-41eb-8234-8181e1e35dc4_things/full-access"
+    }
+}

@@ -11,6 +11,26 @@ const mapStateToProps = state => {
 };
 
 const ConnetedDeviceDashboard = ({ device }) => {
+  const rows = Object.keys(device.attributes.schema)
+    .map(featureName => {
+      const featureDef = device.attributes.schema[featureName];
+      const feature = device.features[featureName];
+
+      const locationCard = featureDef.toLowerCase().includes("location");
+
+        return (
+          <Col lg={4} sm={6}>
+            { 
+              locationCard ? 
+                <LocationCard device={device} /> :
+                <CodeCard
+                  featureName={featureName}
+                  feature={feature} />
+            }
+          </Col>
+          )
+      });
+
   return (
     <div className="content">
       <Grid fluid>
@@ -23,26 +43,7 @@ const ConnetedDeviceDashboard = ({ device }) => {
         </Row>
 
         <Row>
-          {Object.keys(device.attributes.schema)
-            .map(function(featureName) {
-              const featureDef = device.attributes.schema[featureName]
-              const feature = device.features[featureName];
-
-              if (featureDef.toLowerCase().includes("location")) {
-                return (
-                  <Col lg={4} sm={6}>
-                      <LocationCard
-                        device={device} />
-                    </Col>)
-              } else {
-                return (
-                  <Col lg={4} sm={6}>
-                    <CodeCard
-                      featureName={featureName}
-                      feature={feature} />
-                  </Col>)
-              }
-            }.bind(this))}
+          { rows }
         </Row>
       </Grid>
     </div>

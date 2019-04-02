@@ -4,12 +4,23 @@ import Reducers from "./reducers"
 import { TEST_DEVICES } from "./testDevices"
 import Actions from "./actions"
 
-export const store = createStore(Reducers);
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
+
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, Reducers)
+
+export const store = createStore(persistedReducer);
+export const persistor = persistStore(store)
 
 store.dispatch(Actions.selectDevice({}))
 store.dispatch(Actions.updateDevices(TEST_DEVICES))
 
-/*
+/* State
 {
     selectedDevice: {
         ...

@@ -31,7 +31,7 @@ export class DeviceCard extends Component {
             <Col xs={12}>
               {/*TODO fix css*/}
               <div className="text-center">
-                <img className="deviceImg" src={this.props.device.imgSrc}/>
+                <img className="deviceImg" alt="IoT device" src={this.props.device.imgSrc}/>
               </div>
             </Col>
           </Row>
