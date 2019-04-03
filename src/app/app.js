@@ -40,14 +40,16 @@ export class App extends Component {
     }
 
     render() {
+        const routes = indexRoutes.map((prop, key) => {
+            return <Route to={prop.path} component={prop.component} key={key} />;
+        });
+
         return (
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
                     <HashRouter>
                         <Switch>
-                            {indexRoutes.map((prop, key) => {
-                                return <Route to={prop.path} component={prop.component} key={key} />;
-                            })}
+                            {routes}
                         </Switch>
                     </HashRouter>
                 </PersistGate>

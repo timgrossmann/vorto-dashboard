@@ -6,6 +6,8 @@ import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export class CodeCard extends Component {
   render() {
+    const jsonText = JSON.stringify(this.props.feature, null, 2)
+    
     return (
       <div className="card card-stats attrCard">
         <div className="content">
@@ -20,7 +22,7 @@ export class CodeCard extends Component {
             <Col xs={12}>
               <div className="">
                 <SyntaxHighlighter language='json' style={anOldHope}>
-                  {JSON.stringify(this.props.feature, null, 2)}
+                  {jsonText}
                 </SyntaxHighlighter>
               </div>
             </Col>

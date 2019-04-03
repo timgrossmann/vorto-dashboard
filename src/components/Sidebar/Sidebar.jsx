@@ -23,6 +23,34 @@ class Sidebar extends Component {
     window.addEventListener("resize", this.updateDimensions.bind(this));
   }
   render() {
+    const routes = dashboardRoutes.map((prop, key) => {
+      if (prop.hidden) {
+        return null;
+      }
+      
+      if (!prop.redirect)
+        return (
+          <li
+            className={
+              prop.upgrade
+                ? "active active-pro"
+                : this.activeRoute(prop.path)
+            }
+            key={key}
+          >
+            <NavLink
+              to={prop.path}
+              className="nav-link"
+              activeClassName="active"
+            >
+              <i className={prop.icon} />
+              <p>{prop.name}</p>
+            </NavLink>
+          </li>
+        );
+      return null;
+    });
+
     return (
       <div
         id="sidebar"
@@ -46,33 +74,7 @@ class Sidebar extends Component {
         </div>
         <div className="sidebar-wrapper">
           <ul className="nav">
-            {dashboardRoutes.map((prop, key) => {
-              if (prop.hidden) {
-                return null;
-              }
-              
-              if (!prop.redirect)
-                return (
-                  <li
-                    className={
-                      prop.upgrade
-                        ? "active active-pro"
-                        : this.activeRoute(prop.path)
-                    }
-                    key={key}
-                  >
-                    <NavLink
-                      to={prop.path}
-                      className="nav-link"
-                      activeClassName="active"
-                    >
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
-                    </NavLink>
-                  </li>
-                );
-              return null;
-            })}
+            {routes}
           </ul>
         </div>
       </div>

@@ -29,32 +29,33 @@ class OSMap extends Component {
         const deviceLocStatus = devices[0].features.location.properties.status
         const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 
+        const mappedDevices = devices.map(device => {
+            const deviceLocStatus = device.features.location.properties.status
+            const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
+
+            const popUp = this.props.displayTooltip ? 
+                (<Popup>
+                    <DeviceTooltip 
+                        device={device} 
+                        redirect={() => this.setRedirect(device)}
+                    />
+                </Popup>) 
+                : <div />;
+
+            return (
+                <Marker position={position}>
+                    {popUp} 
+                </Marker>
+            )
+        });
+
         return (
             <Map className="mapWrapper" center={position} zoom={12}>
                 <TileLayer
                     url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
                 />
                 {/* TODO fix css for height */}
-
-                {devices.map(device => {
-                    const deviceLocStatus = device.features.location.properties.status
-                    const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
-
-                    const popUp = this.props.displayTooltip ? 
-                        (<Popup>
-                            <DeviceTooltip 
-                                device={device} 
-                                redirect={() => this.setRedirect(device)}
-                            />
-                        </Popup>) 
-                        : <div />;
-
-                    return (
-                        <Marker position={position}>
-                            {popUp} 
-                        </Marker>
-                    )
-                })}
+                {mappedDevices}
             </Map>
         );
     }

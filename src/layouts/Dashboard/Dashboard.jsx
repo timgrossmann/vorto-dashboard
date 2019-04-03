@@ -22,19 +22,20 @@ class Dashboard extends Component {
     }
   }
   render() {
+    const routes = dashboardRoutes.map((prop, key) => {
+      if (prop.redirect) {
+        return (<Redirect from={prop.path} to={prop.to} key={key} />);
+      }
+      return (<Route path={prop.path} component={prop.component} key={key} />);
+    })
+
     return (
       <div className="wrapper">
         <Sidebar {...this.props} />
         <div id="main-panel" className="main-panel" ref="mainPanel">
           <Header {...this.props} />
           <Switch>
-            {dashboardRoutes.map((prop, key) => {
-              if (prop.redirect)
-                return <Redirect from={prop.path} to={prop.to} key={key} />;
-              return (
-                <Route path={prop.path} component={prop.component} key={key} />
-              );
-            })}
+            {routes}
           </Switch>
         </div>
       </div>

@@ -18,23 +18,27 @@ function mapDispatchToProps(dispatch) {
 }
 
 const ConnectedDevices = ({ devices, selectDevice }) => {
+  const deviceCols = devices.map(device => {
+    return (
+      <Col lg={3} sm={6}>
+        <DeviceCard
+          device={device}
+          setSelectedDevice={(device) => selectDevice(device)}
+        />
+      </Col>
+    );
+  })
+
+  const thingsNote = devices.length === 0 ?
+  (<p>Please make sure you have devices set up in the Thing Browser and that your credentials are correct</p>)
+  : (<div />)
+
   return (
     <div className="content">
-      {devices.length === 0 ?
-        (<p>Please make sure you have devices set up in the Thing Browser and that your credentials are correct</p>)
-        : (<div />)}
+      {thingsNote}
       <Grid fluid>
         <Row>
-          {devices.map(device => {
-            return (
-              <Col lg={3} sm={6}>
-                <DeviceCard
-                  device={device}
-                  setSelectedDevice={(device) => selectDevice(device)}
-                />
-              </Col>
-            );
-          })}
+          {deviceCols}
         </Row>
       </Grid>
     </div>
