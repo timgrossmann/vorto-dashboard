@@ -24,12 +24,41 @@ class OSMap extends Component {
     }
   
     render() {
-        const devices = this.props.devices;
-        
-        const deviceLocStatus = devices[0].features.location.properties.status
+        // Only devices that have lat and lon set
+        // TODO generalize to cover many names
+        const validDevices = this.props.devices.filter(device => {
+            const features = device.features;
+
+            for (const feature in features) {
+                const featureObj = features[feature] 
+                if (!featureObj.definition[0].toLowerCase().includes("location")) {
+                    continue;
+                }
+
+                const { latitude, longitude } = featureObj.properties.status
+                if (latitude && longitude) {
+                    return true
+                }
+            }
+
+            return false
+        });
+
+        if (validDevices.length === 0) {
+            return (
+                <Map className="mapWrapper" center={[1.347, 103.841]} zoom={11}>
+                    <TileLayer
+                        url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+                    />
+                </Map>
+            );
+        }
+
+        // generalize to work with different feature names
+        const deviceLocStatus = validDevices[0].features.location.properties.status 
         const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 
-        const mappedDevices = devices.map(device => {
+        const mappedDevices = validDevices.map(device => {
             const deviceLocStatus = device.features.location.properties.status
             const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 

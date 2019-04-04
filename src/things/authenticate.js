@@ -11,9 +11,9 @@ class AuthToken {
     getInitialToken () {
         const tokenForm = {
             "grant_type": "client_credentials",
-            "client_id": config.things.client_id,
-            "client_secret": config.things.client_secret,
-            "scope:service": config.things.scope
+            "client_id": config.bosch_iot_suite.client_id,
+            "client_secret": config.bosch_iot_suite.client_secret,
+            "scope:service": config.bosch_iot_suite.scope
         }
         
         return request(this.getReqOpts(tokenForm))
@@ -53,8 +53,8 @@ class AuthToken {
     refreshToken (refreshToken) {
         const tokenForm = {
             "grant_type": "refresh_token",
-            "client_id": config.things.client_id,
-            "client_secret": config.things.client_secret,
+            "client_id": config.bosch_iot_suite.client_id,
+            "client_secret": config.bosch_iot_suite.client_secret,
             "refresh_token": refreshToken
         }
 
@@ -72,7 +72,8 @@ class AuthToken {
 
                 setTimeout(function() {
                     this.refreshToken(this.refresh_token)
-                }.bind(this), this.expires_in * 1000)
+                }.bind(this), this.expires_in * 950)
+                // don't wait the full amount of sec until invalidate (has to be < 1000)
             })
             .catch(err => console.log(`Could not get token with given credentials. - ${err}`))
     }

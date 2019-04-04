@@ -4,8 +4,6 @@ import OSMap from "../OSMap/OSMap";
 
 export class LocationCard extends Component {
   render() {
-    console.log(this.props.device)
-
     return (
       <div className="card card-stats attrCard">
         <div className="content">

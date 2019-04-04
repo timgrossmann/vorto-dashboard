@@ -1,8 +1,11 @@
 {
-    "things": {
+    "bosch_iot_suite": {
         "client_id": "7d73ac34-d054-42c4-ae03-11095fea19d9",
         "client_secret": "0E116C46B94D05651B181D4578B64500",
         "scope": "iot-things-eu-1:c6cd7405-0865-41eb-8234-8181e1e35dc4_things/full-access",
-        "intervalMS": 5000
+        "intervalMS": 10000
+    },
+    "app": {
+        "server_port": 8080
     }
 }
