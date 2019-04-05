@@ -9,8 +9,6 @@ const { getUpdatedDevices } = require("./src/things");
 const config = require("./config.json")
 
 // Cross origin fix
-io.origins(["http://localhost:*"])
-
 const allowCrossDomain = (req, res, next) => {
   res.header('Access-Control-Allow-Origin', "*");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');

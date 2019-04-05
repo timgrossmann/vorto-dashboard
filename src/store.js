@@ -1,7 +1,6 @@
 import { createStore } from "redux";
 
 import Reducers from "./reducers"
-import { TEST_DEVICES } from "./testDevices"
 import Actions from "./actions"
 
 import { persistStore, persistReducer } from 'redux-persist'
@@ -18,7 +17,7 @@ export const store = createStore(persistedReducer);
 export const persistor = persistStore(store)
 
 store.dispatch(Actions.selectDevice({}))
-store.dispatch(Actions.updateDevices(TEST_DEVICES))
+store.dispatch(Actions.updateDevices([]))
 
 /* State
 {

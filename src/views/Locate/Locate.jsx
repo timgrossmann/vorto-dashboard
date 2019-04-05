@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 
 import OSMap from "../../components/OSMap/OSMap";
 import Actions from "../../actions"
+import { CATEGORIES } from "../../util" 
 
 function hasLocationFeature(device) {
   return Object.keys(device.features)
           .map(feature => device.features[feature].definition)
           .filter(definitions => {
             for (const definition of definitions) {
-              if (definition.toLowerCase().includes("location")) {
+              if (CATEGORIES.LOCATION.includes(definition)) {
                 return true
               }
             }
@@ -32,7 +33,7 @@ function mapDispatchToProps(dispatch) {
 
 const ConnectedMaps = ({ devices, selectDevice }) => {
   return (
-    <div className="fillHW">
+    <div className="fillHWLocate">
       <OSMap 
         devices={devices} 
         displayTooltip={true}

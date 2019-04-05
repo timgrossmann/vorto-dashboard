@@ -22,12 +22,12 @@ function getUpdatedDevices () {
                 // request all things the user has created and have a policy
                 request(getReqOpts(token))
                     .then(res => {
-                        console.log(JSON.stringify(res, null, 4))
-
                         const devices = res.items
+                        console.log(`=> Successfully pulled ${devices.length} things.`)
                         resolve(devices)
                     })
             })
+            .catch(err => reject(`Could not get token - ${err}`))
     })
 }
 

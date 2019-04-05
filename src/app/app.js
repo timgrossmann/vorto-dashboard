@@ -25,8 +25,6 @@ function pollDevices () {
                 imgSrc: getImgUrl(device)
             }))
 
-            console.log(devices)
-
             store.dispatch(Actions.updateDevices(devices))
         })
         .catch(err => `Could not poll data from backend... ${err}`)

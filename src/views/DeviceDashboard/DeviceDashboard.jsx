@@ -2,34 +2,48 @@ import React from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
-import { AttributesCard } from "components/AttributesCard/AttributesCard.jsx"
-import { CodeCard } from "components/CodeCard/CodeCard.jsx";
+import AttributesCard from "components/AttributesCard/AttributesCard.jsx"
+import CodeCard from "components/CodeCard/CodeCard.jsx";
 import LocationCard from "components/LocationCard/LocationCard";
+
+import {
+  CATEGORIES,
+  mapDeftoCardCategorie
+} from "../../util"
 
 const mapStateToProps = state => {
   return { device: state.selectedDevice };
 };
 
+const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
+  switch (categorieType) {
+    case CATEGORIES.LOCATION:
+      return (
+        <LocationCard device={device} />
+      );
+    case CATEGORIES.BOOLEAN:
+    case CATEGORIES.GAGE:
+    case CATEGORIES.BAR:
+    default:
+      return (
+        <CodeCard
+          featureName={featureName}
+          feature={featureObj} />
+      );
+  }
+}
+
 const ConnetedDeviceDashboard = ({ device }) => {
-  const rows = Object.keys(device.attributes.schema)
+  const row = Object.keys(device.features)
     .map(featureName => {
-      const featureDef = device.attributes.schema[featureName];
-      const feature = device.features[featureName];
+      const featureObj = device.features[featureName]
+      const featureDefs = featureObj.definition;
 
-      const locationCard = featureDef.toLowerCase().includes("location");
+      const categorieType = mapDeftoCardCategorie(featureDefs);
+      const featureCard = mapCategorieToCard(categorieType, device, featureObj, featureName);
 
-        return (
-          <Col lg={4} sm={6}>
-            { 
-              locationCard ? 
-                <LocationCard device={device} /> :
-                <CodeCard
-                  featureName={featureName}
-                  feature={feature} />
-            }
-          </Col>
-          )
-      });
+      return (<Col lg={4} sm={6}>{featureCard}</Col>);
+    });
 
   return (
     <div className="content">
@@ -43,7 +57,7 @@ const ConnetedDeviceDashboard = ({ device }) => {
         </Row>
 
         <Row>
-          { rows }
+          {row}
         </Row>
       </Grid>
     </div>

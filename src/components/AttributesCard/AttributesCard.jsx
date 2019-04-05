@@ -11,25 +11,26 @@ export class AttributesCard extends Component {
           </div>
           <Row>
             <Col xs={4}>
-              <div className="">
-                <img src={this.props.device.imgSrc} alt="IoT device" height="200px"/>
+              <div className="attrImgContainer">
+                <img src={this.props.device.imgSrc} className="attrImg" alt="IoT device"/>
               </div>
             </Col>
-            <Col xs={4}>
-              {/* TODO center text vertically */}
-              <div className="attrContainer">
-                <p><span className="attrKeyword">Thing ID: </span>{this.props.device.thingId}</p>
-                <p><span className="attrKeyword">Policy ID: </span>{this.props.device.policyId}</p>
-                <p><span className="attrKeyword">Device ID: </span>{this.props.device.attributes.deviceId}</p>
-              </div>
-            </Col>
-            <Col xs={4}>
-            {/*TODO fix css*/}
-              <div className="attrContainer">
-                <p><span className="attrKeyword">Created by: </span>{this.props.device.attributes.createdBy}</p>
-                <p><span className="attrKeyword">Definition: </span>{this.props.device.attributes.definition}</p>
-              </div>
-            </Col>
+            <div className="attrContainerWrappr">
+              <Col xs={4}>
+                <div className="attrContainer">
+                  <p><span className="attrKeyword">Thing ID: </span>{this.props.device.thingId}</p>
+                  <p><span className="attrKeyword">Policy ID: </span>{this.props.device.policyId}</p>
+                  <p><span className="attrKeyword">Device ID: </span>{this.props.device.attributes.deviceId}</p>
+                </div>
+              </Col>
+              <Col xs={4}>
+              {/*TODO fix css on resize*/}
+                <div className="attrContainer">
+                  <p><span className="attrKeyword">Created by: </span>{this.props.device.attributes.createdBy}</p>
+                  <p><span className="attrKeyword">Definition: </span>{this.props.device.attributes.definition}</p>
+                </div>
+              </Col>
+            </div>
           </Row>
           <hr />
           <Row>

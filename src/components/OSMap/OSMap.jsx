@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 
 import DeviceTooltip from "components/DeviceTooltip/DeviceTooltip"
 
+import { CATEGORIES } from "../../util" 
+
 class OSMap extends Component {
     state = {
         redirect: false
@@ -24,14 +26,12 @@ class OSMap extends Component {
     }
   
     render() {
-        // Only devices that have lat and lon set
-        // TODO generalize to cover many names
         const validDevices = this.props.devices.filter(device => {
             const features = device.features;
 
             for (const feature in features) {
                 const featureObj = features[feature] 
-                if (!featureObj.definition[0].toLowerCase().includes("location")) {
+                if (!CATEGORIES.LOCATION.includes(featureObj.definition[0])) {
                     continue;
                 }
 
@@ -39,6 +39,11 @@ class OSMap extends Component {
                 if (latitude && longitude) {
                     return true
                 }
+
+                // Remove mock data
+                featureObj.properties.status.latitude = 1.347
+                featureObj.properties.status.longitude = 103.841
+                return true
             }
 
             return false

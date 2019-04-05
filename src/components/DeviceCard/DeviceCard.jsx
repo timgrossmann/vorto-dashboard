@@ -29,20 +29,21 @@ export class DeviceCard extends Component {
         <div className="content">
           <Row>
             <Col xs={12}>
-              {/*TODO fix css*/}
-              <div className="text-center">
-                <img className="deviceImg" alt="IoT device" src={this.props.device.imgSrc}/>
+              <div className="imgContainer">
+                <img className="deviceImg" alt={this.props.device.attributes.definition[0]} src={this.props.device.imgSrc}/>
               </div>
             </Col>
           </Row>
 
-          <Row>
-            <hr />
-            <Col xs={12}>
-              <div>
-                <p className="text-center">{this.props.device.attributes.thingName}</p>
-              </div>
-            </Col>
+          <Row className="deviceFooter">
+            <div className="footerContainer">
+              <hr />
+              <Col xs={12}>
+                <div>
+                  <p className="text-center">{this.props.device.attributes.thingName}</p>
+                </div>
+              </Col>
+            </div>
           </Row>
         </div>
         </button>
