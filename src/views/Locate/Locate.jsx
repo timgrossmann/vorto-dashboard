@@ -3,24 +3,24 @@ import { connect } from "react-redux";
 
 import OSMap from "../../components/OSMap/OSMap";
 import Actions from "../../actions"
-import { CATEGORIES } from "../../util" 
+import { CATEGORIES } from "../../util"
 
 function hasLocationFeature(device) {
   return Object.keys(device.features)
-          .map(feature => device.features[feature].definition)
-          .filter(definitions => {
-            for (const definition of definitions) {
-              if (CATEGORIES.LOCATION.includes(definition)) {
-                return true
-              }
-            }
-            return false
-          })
-          .length > 0
+    .map(feature => device.features[feature].definition)
+    .filter(definitions => {
+      for (const definition of definitions) {
+        if (CATEGORIES.LOCATION.includes(definition)) {
+          return true
+        }
+      }
+      return false
+    })
+    .length > 0
 }
 
 const mapStateToProps = state => {
-  return { 
+  return {
     devices: state.devices.devices.filter(hasLocationFeature)
   };
 };
@@ -34,8 +34,8 @@ function mapDispatchToProps(dispatch) {
 const ConnectedMaps = ({ devices, selectDevice }) => {
   return (
     <div className="fillHWLocate">
-      <OSMap 
-        devices={devices} 
+      <OSMap
+        devices={devices}
         displayTooltip={true}
         setSelectedDevice={(device) => selectDevice(device)}
       />

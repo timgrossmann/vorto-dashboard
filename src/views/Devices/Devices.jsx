@@ -6,7 +6,7 @@ import { DeviceCard } from "components/DeviceCard/DeviceCard.jsx";
 import Actions from "../../actions"
 
 const mapStateToProps = state => {
-  return { 
+  return {
     devices: state.devices.devices,
   };
 };
@@ -30,8 +30,8 @@ const ConnectedDevices = ({ devices, selectDevice }) => {
   })
 
   const thingsNote = devices.length === 0 ?
-  (<p>Please make sure you have devices set up in the Thing Browser and that your credentials are correct</p>)
-  : (<div />)
+    (<p>Please make sure you have devices set up in the Thing Browser and that your credentials are correct</p>)
+    : (<div />)
 
   return (
     <div className="content">

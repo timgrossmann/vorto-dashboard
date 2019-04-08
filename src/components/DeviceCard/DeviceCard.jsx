@@ -20,32 +20,32 @@ export class DeviceCard extends Component {
       return <Redirect to='/devicedashboard' />
     }
   }
-  
+
   render() {
     return (
       <div className="card card-stats">
         <button className="deviceContainer" onClick={this.setRedirect}>
-        {this.renderRedirect()}
-        <div className="content">
-          <Row>
-            <Col xs={12}>
-              <div className="imgContainer">
-                <img className="deviceImg" alt={this.props.device.attributes.definition[0]} src={this.props.device.imgSrc}/>
-              </div>
-            </Col>
-          </Row>
-
-          <Row className="deviceFooter">
-            <div className="footerContainer">
-              <hr />
+          {this.renderRedirect()}
+          <div className="content">
+            <Row>
               <Col xs={12}>
-                <div>
-                  <p className="text-center">{this.props.device.attributes.thingName}</p>
+                <div className="imgContainer">
+                  <img className="deviceImg" alt={this.props.device.attributes.definition[0]} src={this.props.device.imgSrc} />
                 </div>
               </Col>
-            </div>
-          </Row>
-        </div>
+            </Row>
+
+            <Row className="deviceFooter">
+              <div className="footerContainer">
+                <hr />
+                <Col xs={12}>
+                  <div>
+                    <p className="text-center">{this.props.device.attributes.thingName}</p>
+                  </div>
+                </Col>
+              </div>
+            </Row>
+          </div>
         </button>
       </div>
     );

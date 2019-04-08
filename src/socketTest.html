@@ -1,42 +1,45 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="theme-color" content="#000000">
-    </head>
-    <body>
-        <noscript>
-        You need to enable JavaScript to run this app.
-        </noscript>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-        <script>
-            const options = {
-                secure: false,
-                rememberUpgrade:true,
-                rejectUnauthorized: false,
-                transportOptions: {
-                    polling: {
-                        extraHeaders: {
-                            "Access-Control-Allow-Origin": "http://www.localhost:8080"
-                        }
-                    }   
-                }
-            }
-            const socket = io('http://www.localhost:8080', options);
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+</head>
 
-            socket.on('connect', () => {
-                console.log("Connected")
-            });
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
 
-            socket.on('event', (data) => {
-                console.log("Event", data)
-            });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script>
+    const options = {
+      secure: false,
+      rememberUpgrade: true,
+      rejectUnauthorized: false,
+      transportOptions: {
+        polling: {
+          extraHeaders: {
+            "Access-Control-Allow-Origin": "http://www.localhost:8080"
+          }
+        }
+      }
+    }
+    const socket = io('http://www.localhost:8080', options);
 
-            socket.on('disconnect', () => {
-                console.log("Disconnected")
-            });     
-        </script>
-    </body>
+    socket.on('connect', () => {
+      console.log("Connected")
+    });
+
+    socket.on('event', (data) => {
+      console.log("Event", data)
+    });
+
+    socket.on('disconnect', () => {
+      console.log("Disconnected")
+    });     
+  </script>
+</body>
+
 </html>

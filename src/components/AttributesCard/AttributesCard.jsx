@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
-export class AttributesCard extends Component {  
+export class AttributesCard extends Component {
   render() {
     return (
       <div className="card card-stats">
         <div className="content">
           <div>
-                <h3>{this.props.device.attributes.thingName}</h3>
+            <h3>{this.props.device.attributes.thingName}</h3>
           </div>
           <Row>
             <Col xs={4}>
               <div className="attrImgContainer">
-                <img src={this.props.device.imgSrc} className="attrImg" alt="IoT device"/>
+                <img src={this.props.device.imgSrc} className="attrImg" alt="IoT device" />
               </div>
             </Col>
             <div className="attrContainerWrappr">
@@ -24,7 +24,7 @@ export class AttributesCard extends Component {
                 </div>
               </Col>
               <Col xs={4}>
-              {/*TODO fix css on resize*/}
+                {/*TODO fix css on resize*/}
                 <div className="attrContainer">
                   <p><span className="attrKeyword">Created by: </span>{this.props.device.attributes.createdBy}</p>
                   <p><span className="attrKeyword">Definition: </span>{this.props.device.attributes.definition}</p>

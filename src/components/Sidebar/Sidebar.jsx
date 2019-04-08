@@ -27,7 +27,7 @@ class Sidebar extends Component {
       if (prop.hidden) {
         return null;
       }
-      
+
       if (!prop.redirect)
         return (
           <li

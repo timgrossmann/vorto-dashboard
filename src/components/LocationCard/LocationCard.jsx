@@ -16,7 +16,7 @@ export class LocationCard extends Component {
           </Row>
           <Row>
             <Col xs={12} className="mapCard">
-              <OSMap devices={[this.props.device]} displayTooltip={false}/>
+              <OSMap devices={[this.props.device]} displayTooltip={false} />
             </Col>
           </Row>
         </div>

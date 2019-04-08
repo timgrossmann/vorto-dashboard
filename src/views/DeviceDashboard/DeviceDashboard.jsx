@@ -5,11 +5,12 @@ import { connect } from "react-redux";
 import AttributesCard from "components/AttributesCard/AttributesCard.jsx"
 import CodeCard from "components/CodeCard/CodeCard.jsx";
 import LocationCard from "components/LocationCard/LocationCard";
+import TemperatureCard from "../../components/TemperatureCard/TemperatureCard";
 
 import {
   CATEGORIES,
   mapDeftoCardCategorie
-} from "../../util"
+} from "../../util";
 
 const mapStateToProps = state => {
   return { device: state.selectedDevice };
@@ -21,6 +22,10 @@ const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
       return (
         <LocationCard device={device} />
       );
+    case CATEGORIES.TEMPERATURE:
+    /*return (
+      <TemperatureCard />
+    );*/
     case CATEGORIES.BOOLEAN:
     case CATEGORIES.GAGE:
     case CATEGORIES.BAR:
