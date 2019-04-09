@@ -5,12 +5,14 @@ import { connect } from "react-redux";
 import AttributesCard from "components/AttributesCard/AttributesCard.jsx"
 import CodeCard from "components/CodeCard/CodeCard.jsx";
 import LocationCard from "components/LocationCard/LocationCard";
-import TemperatureCard from "../../components/TemperatureCard/TemperatureCard";
+import GaugeCard from "../../components/GaugeCard/GaugeCard";
+import BatteryCard from "../../components/BatteryCard/BatteryCard";
 
 import {
   CATEGORIES,
   mapDeftoCardCategorie
 } from "../../util";
+import ThermometerCard from "../../components/ThermometerCard/ThermometerCard";
 
 const mapStateToProps = state => {
   return { device: state.selectedDevice };
@@ -20,14 +22,30 @@ const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
   switch (categorieType) {
     case CATEGORIES.LOCATION:
       return (
-        <LocationCard device={device} />
+        <LocationCard
+          featureName={featureName}
+          device={device} />
+      );
+    case CATEGORIES.GAGE:
+      return (
+        <GaugeCard
+          featureName={featureName}
+          feature={featureObj} />
       );
     case CATEGORIES.TEMPERATURE:
-    /*return (
-      <TemperatureCard />
-    );*/
+      return (
+        <ThermometerCard
+          featureName={featureName}
+          feature={featureObj} />
+      );
+
+    case CATEGORIES.BATTERY:
+      return (
+        <BatteryCard
+          featureName={featureName}
+          feature={featureObj} />
+      );
     case CATEGORIES.BOOLEAN:
-    case CATEGORIES.GAGE:
     case CATEGORIES.BAR:
     default:
       return (

@@ -10,7 +10,7 @@ export class LocationCard extends Component {
           <Row>
             <Col xs={12}>
               <div className="text-center">
-                <h4>{this.props.device.attributes.thingName}</h4>
+                <h4>{this.props.featureName}</h4>
               </div>
             </Col>
           </Row>

@@ -11,7 +11,7 @@ const dashboardRoutes = [
   },
   {
     path: "/devicedashboard",
-    name: "DeviceDashboard",
+    name: "Device Dashboard",
     component: DeviceDashboard,
     hidden: true
   },
