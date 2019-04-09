@@ -3003,6 +3003,15 @@ body > .navbar-collapse[data-color="purple"]:after {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch; } }
 
+.navbar-header {
+  width: 100%; }
+
+.searchBox {
+  position: relative;
+  float: right;
+  width: 200px;
+  margin: 10px; }
+
 .deviceContainer {
   background: none;
   border: none;
@@ -3053,10 +3062,19 @@ body > .navbar-collapse[data-color="purple"]:after {
   align-items: center; }
 
 .attrContainer {
-  height: 200px; }
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.attribute {
+  width: 100%; }
 
 .fillHWLocate {
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .mapWrapper {
   height: 100%;
@@ -3084,7 +3102,8 @@ body > .navbar-collapse[data-color="purple"]:after {
 .attrImgContainer {
   display: flex;
   width: 100%;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 25px; }
 
 .attrImg {
   height: 200px; }
@@ -3223,7 +3242,8 @@ body > .navbar-collapse[data-color="purple"]:after {
     height: 100px;
     position: relative;
     width: 200px;
-    padding: 5px; }
+    padding: 5px;
+    margin-bottom: 10px; }
     .batteryContainer .battery .battery-background {
       height: 100%;
       border-radius: 10px; }

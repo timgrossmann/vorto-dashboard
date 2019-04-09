@@ -38,6 +38,17 @@
 @import "lbd/chartist";
 @import "lbd/responsive";
 
+.navbar-header {
+    width: 100%;
+}
+
+.searchBox {
+    position: relative;
+    float: right;
+    width: 200px;
+    margin: 10px;
+}
+
 .deviceContainer {
     background: none;
     border: none;
@@ -98,10 +109,20 @@
 
 .attrContainer {
     height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.attribute {
+    width: 100%;
 }
 
 .fillHWLocate {
     width: 100%;
+    overflow: hidden;
 }
 
 .mapWrapper {
@@ -137,6 +158,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 .attrImg {
@@ -305,6 +327,7 @@
         position: relative;
         width: 200px;
         padding: 5px;
+        margin-bottom: 10px;
 
         .battery-background {
             height: 100%;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
 
 import dashboardRoutes from "routes/dashboard.jsx";
+import Search from "./Search";
 
 class Header extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Header extends Component {
       sidebarExists: false
     };
   }
+
   mobileSidebarToggle(e) {
     if (this.state.sidebarExists === false) {
       this.setState({
@@ -27,6 +29,7 @@ class Header extends Component {
     };
     document.body.appendChild(node);
   }
+
   getBrand() {
     var name;
     dashboardRoutes.map((prop, key) => {
@@ -52,16 +55,20 @@ class Header extends Component {
     });
     return name;
   }
+
   render() {
+    const brand = this.getBrand();
+
     return (
       <Navbar fluid>
         <Navbar.Header>
           <Navbar.Brand>
-            {this.getBrand()}
+            {brand}
           </Navbar.Brand>
           <Navbar.Toggle onClick={this.mobileSidebarToggle} />
+          <Search brand={brand} />
         </Navbar.Header>
-      </Navbar>
+      </Navbar >
     );
   }
 }
