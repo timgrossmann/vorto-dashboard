@@ -4,7 +4,12 @@
 ```bash
 cd vorto_dashboard
 npm install
+
+# start the react dashboard
 npm start
+
+# start the "backend"
+node index.js
 ```
 
 ### Setup Things
