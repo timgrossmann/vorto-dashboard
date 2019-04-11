@@ -1,4 +1,4 @@
-let k1 = 1000;
+let k1 = 5000;
 
 function getDevices() {
     return [
@@ -609,7 +609,7 @@ function getDevices() {
                         },
                         "status": {
                             "remainingCapacity": {
-                                "value": Math.round(0.1 * k1--)
+                                "value": Math.round(0.017 * k1--)
                             }
                         }
                     }

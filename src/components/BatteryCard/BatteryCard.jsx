@@ -3,6 +3,8 @@ import { Row, Col } from "react-bootstrap";
 
 export class BatteryCard extends Component {
   render() {
+    // TODO adjust retrieval of attributes to be smarter 
+    // (Get the definition of the function blocks and find attribute values)
     const values = this.props.feature.properties;
     const currVal = values.status.remainingCapacity.value || 63;
     const minVal = 0;

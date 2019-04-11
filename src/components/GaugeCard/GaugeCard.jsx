@@ -3,6 +3,8 @@ import { Row, Col } from "react-bootstrap";
 
 export class GaugeCard extends Component {
   render() {
+    // TODO adjust retrieval of attributes to be smarter 
+    // (Get the definition of the function blocks and find attribute values)
     const values = this.props.feature.properties;
     const currVal = values.status.value.currentMeasured || 50;
     const minVal = values.status.value.minMeasuired || 0;

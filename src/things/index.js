@@ -14,7 +14,7 @@ const getReqOpts = (accessToken) => ({
 })
 
 const authToken = new AuthToken()
-function getUpdatedDevices2() {
+function getUpdatedDevices() {
   return new Promise((resolve, reject) => {
     authToken
       .getToken()
@@ -34,7 +34,7 @@ function getUpdatedDevices2() {
   })
 }
 
-function getUpdatedDevices() {
+function getUpdatedDevicesMock() {
   console.log(getDevices())
 
   return new Promise((resolve, reject) => {

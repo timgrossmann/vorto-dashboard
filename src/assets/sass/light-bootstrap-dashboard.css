@@ -3191,7 +3191,12 @@ body > .navbar-collapse[data-color="purple"]:after {
     display: block;
     position: absolute;
     bottom: 0;
-    max-height: 98%; }
+    max-height: 98%;
+    -webkit-transition: height 1s;
+    -moz-transition: height 1s;
+    -ms-transition: height 1s;
+    -o-transition: height 1s;
+    transition: height 1s; }
   .thermometer .thermometer-currVal {
     font-size: 32px;
     position: absolute;
@@ -3246,7 +3251,12 @@ body > .navbar-collapse[data-color="purple"]:after {
     margin-bottom: 10px; }
     .batteryContainer .battery .battery-background {
       height: 100%;
-      border-radius: 10px; }
+      border-radius: 10px;
+      -webkit-transition: width 1s;
+      -moz-transition: width 1s;
+      -ms-transition: width 1s;
+      -o-transition: width 1s;
+      transition: width 1s; }
   .batteryContainer .battery-percentage {
     font-size: 32px; }
   .batteryContainer .battery::after {

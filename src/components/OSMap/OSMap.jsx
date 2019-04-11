@@ -40,7 +40,7 @@ class OSMap extends Component {
           return true
         }
 
-        // Remove mock data
+        // TODO Remove mock data
         featureObj.properties.status.latitude = 1.347
         featureObj.properties.status.longitude = 103.841
         return true
@@ -59,7 +59,7 @@ class OSMap extends Component {
       );
     }
 
-    // generalize to work with different feature names
+    // TODO generalize to work with different feature names
     const deviceLocStatus = validDevices[0].features.location.properties.status
     const position = [deviceLocStatus.latitude, deviceLocStatus.longitude]
 
@@ -76,6 +76,7 @@ class OSMap extends Component {
         </Popup>)
         : <div />;
 
+      // TODO fix redirect and history to allow browser back
       return (
         <Marker position={position}>
           {popUp}

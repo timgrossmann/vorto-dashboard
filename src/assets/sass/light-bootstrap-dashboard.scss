@@ -262,6 +262,12 @@
     position: absolute;
     bottom: 0;
     max-height: 98%;
+
+    -webkit-transition: height 1s; 
+    -moz-transition: height 1s; 
+    -ms-transition: height 1s; 
+    -o-transition: height 1s; 
+    transition: height 1s;
   }
   
   .thermometer-currVal {
@@ -332,6 +338,12 @@
         .battery-background {
             height: 100%;
             border-radius: 10px;
+
+            -webkit-transition: width 1s; 
+            -moz-transition: width 1s; 
+            -ms-transition: width 1s; 
+            -o-transition: width 1s; 
+            transition: width 1s;
         }
     }
 

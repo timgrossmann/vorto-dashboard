@@ -30,7 +30,7 @@ store.dispatch(Actions.updateDevices([]))
     }
 }
 
-TODO
+// TODO add search query to state
 {
     search: {
         searching: true/false,
