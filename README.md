@@ -3,7 +3,7 @@
 ### Installation
 ```bash
 cd vorto_dashboard
-npm install
+yarn install # please use yarn here to avoid any problems
 
 # start the react dashboard
 npm start
