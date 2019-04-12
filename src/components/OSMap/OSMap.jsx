@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Redirect } from 'react-router-dom'
 
-import DeviceTooltip from "components/DeviceTooltip/DeviceTooltip"
+import DeviceTooltip from "../DeviceTooltip/DeviceTooltip"
 
 import { CATEGORIES } from "../../util"
 

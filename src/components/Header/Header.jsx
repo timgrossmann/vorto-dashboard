@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
 
-import dashboardRoutes from "routes/dashboard.jsx";
+import dashboardRoutes from "../../routes/dashboard.jsx";
 import Search from "./Search";
 
 class Header extends Component {

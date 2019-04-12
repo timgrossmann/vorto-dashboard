@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
-import { DeviceCard } from "components/DeviceCard/DeviceCard.jsx";
+import { DeviceCard } from "../../components/DeviceCard/DeviceCard.jsx";
 import Actions from "../../actions"
 
 const mapStateToProps = state => {

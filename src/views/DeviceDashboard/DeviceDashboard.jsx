@@ -2,9 +2,9 @@ import React from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
-import AttributesCard from "components/AttributesCard/AttributesCard.jsx"
-import CodeCard from "components/CodeCard/CodeCard.jsx";
-import LocationCard from "components/LocationCard/LocationCard";
+import AttributesCard from "../../components/AttributesCard/AttributesCard.jsx"
+import CodeCard from "../../components/CodeCard/CodeCard.jsx";
+import LocationCard from "../../components/LocationCard/LocationCard";
 import GaugeCard from "../../components/GaugeCard/GaugeCard";
 import BatteryCard from "../../components/BatteryCard/BatteryCard";
 

@@ -1,6 +1,6 @@
-import Devices from "views/Devices/Devices";
-import DeviceDashboard from "views/DeviceDashboard/DeviceDashboard"
-import Locate from "views/Locate/Locate"
+import Devices from "../views/Devices/Devices";
+import DeviceDashboard from "../views/DeviceDashboard/DeviceDashboard"
+import Locate from "../views/Locate/Locate"
 
 const dashboardRoutes = [
   {

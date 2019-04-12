@@ -8,7 +8,7 @@ import request from "request-promise-native"
 
 import io from 'socket.io-client';
 
-import indexRoutes from "routes/index.jsx";
+import indexRoutes from "../routes/index.jsx";
 import { getImgUrl } from "../util"; 
 
 const reqOpts = {
