@@ -8,7 +8,13 @@ export const updateDevices = devices => ({
   devices
 })
 
+export const updateSearch = query => ({
+  type: 'UPDATE_SEARCH',
+  query
+})
+
 export default {
-    selectDevice,
-    updateDevices,
+  selectDevice,
+  updateDevices,
+  updateSearch
 }

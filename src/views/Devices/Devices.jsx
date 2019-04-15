@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 
 import { DeviceCard } from "../../components/DeviceCard/DeviceCard.jsx";
 import Actions from "../../actions"
+import { checkDeviceForQuery } from "../../util";
 
 const mapStateToProps = state => {
   return {
-    devices: state.devices.devices,
+    devices: state.devices.devices
+      .filter(device => checkDeviceForQuery(device, state.search)),
   };
 };
 
@@ -30,7 +32,7 @@ const ConnectedDevices = ({ devices, selectDevice }) => {
   })
 
   const thingsNote = devices.length === 0 ?
-    (<p>Please make sure you have devices set up in the Thing Browser and that your credentials are correct</p>)
+    (<p>Please make sure you have devices set up in the Thing Browser, your credentials are correct and you've cleared your search!</p>)
     : (<div />)
 
   return (

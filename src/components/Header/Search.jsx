@@ -6,35 +6,30 @@ import Actions from "../../actions"
 
 const mapStateToProps = (state, props) => {
     return {
-        devices: state.devices.devices,
-        props: props
+        props: props,
+        searchQuery: state.search.query
     };
 };
 
 function mapDispatchToProps(dispatch) {
     return {
-        updateDevices: devices => dispatch(Actions.updateDevices(devices))
+        updateSearch: query => dispatch(Actions.updateSearch(query))
     };
 }
 
-function handleSearch(evt, devices, updateDevices) {
-    // TODO filter through devices and check for search query
+function handleSearch(evt, updateSearch) {
     const searchQuery = evt.target.value;
     if (!searchQuery) {
-        // TODO set devices to all devices
+        updateSearch("")
         return
     }
 
-    const filteredDevices = devices.filter(device => {
-        return true
-    })
-
-    // updateDevices(filteredDevices)
+    updateSearch(searchQuery.toLowerCase())
 }
 
-const ConnectedSearch = ({ props, devices, updateDevices }) => {
+const ConnectedSearch = ({ props, searchQuery, updateSearch }) => {
     const searchBar = props.brand !== "Device Dashboard" ?
-        <FormControl type="text" placeholder="Search..." className="searchBox" onChange={(evt) => handleSearch(evt, devices, updateDevices)} />
+        <FormControl type="text" value={searchQuery} placeholder="Search..." className="searchBox" onChange={(evt) => handleSearch(evt, updateSearch)} />
         : <div />;
 
     return searchBar;

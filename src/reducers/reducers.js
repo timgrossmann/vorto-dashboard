@@ -36,7 +36,26 @@ export const updateDevices = (state = { devices: [], lastUpdated: "" }, action) 
   return state;
 }
 
+export const updateSearch = (state = { searching: false, query: "" }, action) => {
+  if (action.type === "UPDATE_SEARCH") {
+    if (!action.query) {
+      return {
+        searching: false,
+        query: ""
+      }
+    }
+
+    return {
+      searching: true,
+      query: action.query
+    }
+  }
+
+  return state;
+}
+
 export default {
   selectDevice,
-  updateDevices
+  updateDevices,
+  updateSearch
 }

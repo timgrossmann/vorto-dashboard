@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import OSMap from "../../components/OSMap/OSMap";
 import Actions from "../../actions"
-import { CATEGORIES } from "../../util"
+import { CATEGORIES, checkDeviceForQuery } from "../../util"
 
 function hasLocationFeature(device) {
   return Object.keys(device.features)
@@ -21,7 +21,9 @@ function hasLocationFeature(device) {
 
 const mapStateToProps = state => {
   return {
-    devices: state.devices.devices.filter(hasLocationFeature)
+    devices: state.devices.devices
+      .filter(hasLocationFeature)
+      .filter(device => checkDeviceForQuery(device, state.search))
   };
 };
 

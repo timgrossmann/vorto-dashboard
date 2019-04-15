@@ -18,23 +18,23 @@ export const persistor = persistStore(store)
 
 store.dispatch(Actions.selectDevice({}))
 store.dispatch(Actions.updateDevices([]))
+store.dispatch(Actions.updateSearch(""))
+
+console.log(store.getState())
 
 /* State
 {
+    // TODO update to only thingId instead of full qualified object
     selectedDevice: {
         ...
     },
     devices: {
         lastUpdated: "...",
         devices: [...]
-    }
-}
-
-// TODO add search query to state
-{
+    },
     search: {
         searching: true/false,
-        query: ""
+        query: "..."
     }
 }
 */
