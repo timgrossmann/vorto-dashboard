@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
+import { getRepositoryLink } from '../../util';
+
 export class GaugeCard extends Component {
   render() {
     // TODO adjust retrieval of attributes to be smarter 
@@ -18,7 +20,9 @@ export class GaugeCard extends Component {
           <Row>
             <Col xs={12}>
               <div className="text-center">
-                <h4>{this.props.featureName}</h4>
+                <h4>
+                  <a href={getRepositoryLink(this.props.feature.definition[0])} target="_blank" >{this.props.featureName}</a>
+                </h4>
               </div>
             </Col>
           </Row>

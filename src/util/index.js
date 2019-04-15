@@ -79,9 +79,14 @@ function checkDeviceForQuery(device, { searching, query }) {
   }
 }
 
+function getRepositoryLink(path) {
+  return `https://vorto.eclipse.org/#/details/${path}`
+}
+
 module.exports = {
   getImgUrl,
   CATEGORIES,
   mapDeftoCardCategorie,
-  checkDeviceForQuery
+  checkDeviceForQuery,
+  getRepositoryLink
 }

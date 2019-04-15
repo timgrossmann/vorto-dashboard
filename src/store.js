@@ -30,11 +30,12 @@ console.log(store.getState())
     },
     devices: {
         lastUpdated: "...",
-        devices: [...]
+        devices: [...],
+        lastState: [... state of last upadte],
     },
     search: {
         searching: true/false,
         query: "..."
-    }
+    },
 }
 */

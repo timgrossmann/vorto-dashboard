@@ -57,7 +57,6 @@ const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
 }
 
 const ConnetedDeviceDashboard = ({ device }) => {
-  console.log("updateDashboard")
   const row = Object.keys(device.features)
     .map(featureName => {
       const featureObj = device.features[featureName]

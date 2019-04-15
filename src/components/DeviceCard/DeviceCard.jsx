@@ -22,6 +22,9 @@ export class DeviceCard extends Component {
   }
 
   render() {
+    const device = this.props.device
+    /* const icons = Object.keys(device.features).map(feature => (<span className="fa fa-cloud" />)) */
+
     return (
       <div className="card card-stats">
         <button className="deviceContainer" onClick={this.setRedirect}>
@@ -30,17 +33,27 @@ export class DeviceCard extends Component {
             <Row>
               <Col xs={12}>
                 <div className="imgContainer">
-                  <img className="deviceImg" alt={this.props.device.attributes.definition[0]} src={this.props.device.imgSrc} />
+                  <img className="deviceImg" alt={device.attributes.definition[0]} src={device.imgSrc} />
                 </div>
               </Col>
             </Row>
+
+            {/* TODO add icons that indicate features, connectivity, battery, and location etc.
+            <Row>
+              <Col xs={12}>
+                <div className="iconContainer">
+                  {icons}
+                </div>
+              </Col>
+            </Row> 
+            */}
 
             <Row className="deviceFooter">
               <div className="footerContainer">
                 <hr />
                 <Col xs={12}>
                   <div>
-                    <p className="text-center">{this.props.device.attributes.thingName}</p>
+                    <p className="text-center">{device.attributes.thingName}</p>
                   </div>
                 </Col>
               </div>

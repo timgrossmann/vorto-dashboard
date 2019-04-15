@@ -48,6 +48,15 @@
     overflow: auto;
 }
 
+a {
+    color: #005C99;
+    font-weight: unset;
+}
+
+a:hover {
+    color: #017AD1;
+}
+
 .navbar-header {
     width: 100%;
 }
@@ -96,6 +105,10 @@
     max-height: 250px;
 }
 
+.iconContainer {
+    
+}
+
 .deviceFooter {
     display: flex;
     height: 100px;
@@ -124,6 +137,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: auto;
 }
 
 .attribute {
@@ -175,7 +189,7 @@
 }
 
 .attrImg {
-    height: 200px;
+    max-height: 200px;
 }
 
 .innerCardContainer {
@@ -376,4 +390,3 @@
     border-radius: 0 5px 5px 0;
     } 
 }
-

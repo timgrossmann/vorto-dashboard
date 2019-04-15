@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import OSMap from "../OSMap/OSMap";
 
+import { getRepositoryLink } from '../../util';
+
 export class LocationCard extends Component {
   render() {
     return (
@@ -10,7 +12,10 @@ export class LocationCard extends Component {
           <Row>
             <Col xs={12}>
               <div className="text-center">
-                <h4>{this.props.featureName}</h4>
+                <h4>
+                  <a href={getRepositoryLink(this.props.device.features[this.props.featureName].definition[0])}
+                    target="_blank" >{this.props.featureName}</a>
+                </h4>
               </div>
             </Col>
           </Row>

@@ -35,8 +35,6 @@ class OSMap extends Component {
           continue;
         }
 
-        console.log(device)
-
         const { latitude, longitude } = featureObj.properties.status
         if (latitude && longitude) {
           return true

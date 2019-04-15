@@ -3011,6 +3011,13 @@ body > .navbar-collapse[data-color="purple"]:after {
   height: 100%;
   overflow: auto; }
 
+a {
+  color: #005C99;
+  font-weight: unset; }
+
+a:hover {
+  color: #017AD1; }
+
 .navbar-header {
   width: 100%; }
 
@@ -3075,7 +3082,8 @@ body > .navbar-collapse[data-color="purple"]:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: auto; }
 
 .attribute {
   width: 100%; }
@@ -3117,7 +3125,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   margin-bottom: 25px; }
 
 .attrImg {
-  height: 200px; }
+  max-height: 200px; }
 
 .innerCardContainer {
   display: flex;

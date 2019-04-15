@@ -6,18 +6,18 @@ import Actions from "../actions"
 import { PersistGate } from "redux-persist/integration/react"
 import request from "request-promise-native"
 
-import io from 'socket.io-client';
+/* import io from 'socket.io-client'; */
 
 import indexRoutes from "../routes/index.jsx";
-import { getImgUrl } from "../util"; 
+import { getImgUrl } from "../util";
 
 const reqOpts = {
     url: "http://localhost:8080/devices",
     method: "GET",
-    json:true
+    json: true
 }
 
-function pollDevices () {
+function pollDevices() {
     request(reqOpts)
         .then(res => {
             const devices = res.data.map(device => ({
@@ -67,7 +67,7 @@ export class App extends Component {
 
     componentWillUnmount() {
         clearInterval(this.interval);
-      }
+    }
 
     render() {
         const routes = indexRoutes.map((prop, key) => {
