@@ -1,5 +1,10 @@
 ## Vorto React Device Dashboard
 
+
+<img src="./assets/deviceDashboard.png" width="49%"/> <img src="./assets/locatePage.png" width="49%"/>
+
+---
+
 ### Installation
 ```bash
 cd vorto_dashboard
