@@ -38,6 +38,16 @@
 @import "lbd/chartist";
 @import "lbd/responsive";
 
+.body {
+    height: 100%;
+    width: 100%;
+}
+
+.main-panel {
+    height: 100%;
+    overflow: auto;
+}
+
 .navbar-header {
     width: 100%;
 }
@@ -122,7 +132,9 @@
 
 .fillHWLocate {
     width: 100%;
-    overflow: hidden;
+    height: calc(100% - 61px);
+    height: -moz-calc(100% - 61px);
+    height: -webkit-calc(100% - 61px);
 }
 
 .mapWrapper {
@@ -131,11 +143,12 @@
 }
 
 .content {
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .attrCard {
-    overflow: scroll;
+    overflow: auto;
     height: 400px;
 }
 

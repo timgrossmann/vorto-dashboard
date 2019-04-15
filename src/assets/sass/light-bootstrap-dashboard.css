@@ -3003,6 +3003,14 @@ body > .navbar-collapse[data-color="purple"]:after {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch; } }
 
+.body {
+  height: 100%;
+  width: 100%; }
+
+.main-panel {
+  height: 100%;
+  overflow: auto; }
+
 .navbar-header {
   width: 100%; }
 
@@ -3074,17 +3082,20 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .fillHWLocate {
   width: 100%;
-  overflow: hidden; }
+  height: calc(100% - 61px);
+  height: -moz-calc(100% - 61px);
+  height: -webkit-calc(100% - 61px); }
 
 .mapWrapper {
   height: 100%;
   width: 100%; }
 
 .content {
-  width: 100%; }
+  min-width: 100%;
+  min-height: 100%; }
 
 .attrCard {
-  overflow: scroll;
+  overflow: auto;
   height: 400px; }
 
 .textButton {
