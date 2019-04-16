@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Redirect } from 'react-router-dom'
 
+import ConnectivityStatus from "../ConnectivityStatus/ConnectivityStatus"
+
 export class DeviceCard extends Component {
   state = {
     redirect: false
@@ -23,7 +25,6 @@ export class DeviceCard extends Component {
 
   render() {
     const device = this.props.device
-    /* const icons = Object.keys(device.features).map(feature => (<span className="fa fa-cloud" />)) */
 
     return (
       <div className="card card-stats">
@@ -34,19 +35,10 @@ export class DeviceCard extends Component {
               <Col xs={12}>
                 <div className="imgContainer">
                   <img className="deviceImg" alt={device.attributes.definition[0]} src={device.imgSrc} />
+                  <ConnectivityStatus device={device} />
                 </div>
               </Col>
             </Row>
-
-            {/* TODO add icons that indicate features, connectivity, battery, and location etc.
-            <Row>
-              <Col xs={12}>
-                <div className="iconContainer">
-                  {icons}
-                </div>
-              </Col>
-            </Row> 
-            */}
 
             <Row className="deviceFooter">
               <div className="footerContainer">

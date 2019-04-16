@@ -45,8 +45,6 @@ const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
           featureName={featureName}
           device={device} />
       );
-    case CATEGORIES.BOOLEAN:
-    case CATEGORIES.BAR:
     default:
       return (
         <CodeCard

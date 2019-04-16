@@ -43,6 +43,10 @@
     width: 100%;
 }
 
+.autoScroll {
+    overflow: auto;
+}
+
 .main-panel {
     height: 100%;
     overflow: auto;
@@ -98,15 +102,12 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .deviceImg {
     max-width: 100%;
     max-height: 250px;
-}
-
-.iconContainer {
-    
 }
 
 .deviceFooter {
@@ -246,6 +247,11 @@ a:hover {
 
 .gauge-percentage {
     transform-origin:top center; 
+    -webkit-transition: -webkit-transform 1s; 
+    -moz-transition: -moz-transform 1s; 
+    -ms-transition: -ms-transform 1s; 
+    -o-transition: -o-transform 1s; 
+    transition: transform 1s;
 }
 
 .gauge-min { 
@@ -389,4 +395,11 @@ a:hover {
     width: 10px;
     border-radius: 0 5px 5px 0;
     } 
+}
+
+.connectivityIcon {
+    font-size: 1.25em;
+    position: absolute;
+    top: 10px;
+    right: 25px;
 }

@@ -8,7 +8,7 @@ export class ThermometerCard extends Component {
     // TODO adjust retrieval of attributes to be smarter 
     // (Get the definition of the function blocks and find attribute values)
     const values = this.props.feature.properties;
-    const currVal = values.status.value.currentMeasured || 27.2;
+    const currVal = values.status.value.currentMeasured;
     const minVal = values.status.value.minMeasured;
     const maxVal = values.status.value.maxMeasured || currVal;
 
