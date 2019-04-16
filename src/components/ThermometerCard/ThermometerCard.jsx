@@ -26,6 +26,7 @@ export class ThermometerCard extends Component {
               </div>
             </Col>
           </Row>
+
           <Row>
             <Col xs={12}>
               <div className="innerCardContainer">

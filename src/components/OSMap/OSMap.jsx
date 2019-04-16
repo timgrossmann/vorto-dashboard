@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 
 import DeviceTooltip from "../DeviceTooltip/DeviceTooltip"
 
-import { CATEGORIES } from "../../util"
+import { CATEGORIES } from "../../util/cardUtils"
 
 class OSMap extends Component {
   state = {

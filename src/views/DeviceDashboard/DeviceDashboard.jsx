@@ -11,7 +11,7 @@ import BatteryCard from "../../components/BatteryCard/BatteryCard";
 import {
   CATEGORIES,
   mapDeftoCardCategorie
-} from "../../util";
+} from "../../util/cardUtils";
 import ThermometerCard from "../../components/ThermometerCard/ThermometerCard";
 
 const mapStateToProps = state => {
@@ -20,12 +20,6 @@ const mapStateToProps = state => {
 
 const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
   switch (categorieType) {
-    case CATEGORIES.LOCATION:
-      return (
-        <LocationCard
-          featureName={featureName}
-          device={device} />
-      );
     case CATEGORIES.GAGE:
       return (
         <GaugeCard
@@ -44,6 +38,12 @@ const mapCategorieToCard = (categorieType, device, featureObj, featureName) => {
         <BatteryCard
           featureName={featureName}
           feature={featureObj} />
+      );
+    case CATEGORIES.LOCATION:
+      return (
+        <LocationCard
+          featureName={featureName}
+          device={device} />
       );
     case CATEGORIES.BOOLEAN:
     case CATEGORIES.BAR:

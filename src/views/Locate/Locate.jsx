@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 
 import OSMap from "../../components/OSMap/OSMap";
 import Actions from "../../actions"
-import { CATEGORIES, checkDeviceForQuery } from "../../util"
+import { checkDeviceForQuery } from "../../util"
+import { CATEGORIES } from "../../util/cardUtils"
 
 function hasLocationFeature(device) {
   return Object.keys(device.features)

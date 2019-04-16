@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
 import { getRepositoryLink } from '../../util';
 
-export class CodeCard extends Component {
+export class TemplateCard extends Component {
   render() {
-    const jsonText = JSON.stringify(this.props.feature, null, 2)
+    // TODO - Unpack passed props here
+    // this.props.featureName - holds the given name of the feature
+    // this.props.feature - holdsthe JSON for the current feature
 
     return (
       <div className="card card-stats attrCard">
@@ -25,10 +24,8 @@ export class CodeCard extends Component {
 
           <Row>
             <Col xs={12}>
-              <div className="">
-                <SyntaxHighlighter language='json' style={anOldHope}>
-                  {jsonText}
-                </SyntaxHighlighter>
+              <div className="innerCardContainer">
+                {/* TODO - Create to be displayed information here */}
               </div>
             </Col>
           </Row>
@@ -38,4 +35,4 @@ export class CodeCard extends Component {
   }
 }
 
-export default CodeCard;
+export default TemplateCard;
