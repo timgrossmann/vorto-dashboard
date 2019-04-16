@@ -1,11 +1,8 @@
-## Vorto React Device Dashboard
-
+# Vorto Device Dashboard
 
 <img src="./assets/deviceDashboard.png" width="49%"/> <img src="./assets/locatePage.png" width="49%"/>
 
----
-
-### Installation
+## Installation
 ```bash
 cd vorto_dashboard
 yarn install # please use yarn here to avoid any problems
@@ -17,7 +14,7 @@ npm start
 node index.js
 ```
 
-### Setup Things
+## Setup Things
 1. Create BoschID account
 1. Subscribe to Suite for Asset Communication (Beta)
 1. Set the namespace in the Asset Communication Dashbard. This is needed to create things.
@@ -28,3 +25,7 @@ node index.js
 1. For each device, add an Entry at the policies tab with type "suite-auth" and the clientID from your auth client. Grant thing READ access.
 
 > Once you start the dashboard, all your devices should now be listed and by default, their values will be updated every 5 seconds.
+
+
+## Extending the Dashboard with custom Cards
+If you want to implement custom cards for your own function blocks, [**this short guide**](./extending.md) will serve as a starting point to do so.
