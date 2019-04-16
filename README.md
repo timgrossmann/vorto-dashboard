@@ -1,4 +1,7 @@
 # Vorto Device Dashboard
+React and NodeJS based Dashboard that helps quickly prototype IoT Device integrations with the Bosch IoT Suite. 
+Integrated IoT devices can be displayed and data visualized.
+
 
 <img src="./assets/deviceDashboard.png" width="49%"/> <img src="./assets/locatePage.png" width="49%"/>
 
