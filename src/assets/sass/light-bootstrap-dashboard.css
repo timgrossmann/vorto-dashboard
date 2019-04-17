@@ -3145,61 +3145,60 @@ a:hover {
   font-weight: bold; }
 
 .gauge {
-  width: 200px;
-  height: 200px;
-  transform: scale(1.35);
-  transform-origin: top; }
-
-.gauge-background {
   position: relative;
-  height: 100px;
-  margin-bottom: 10px;
-  background-color: #fff;
-  border-radius: 150px 150px 0 0;
-  overflow: hidden;
-  text-align: center; }
+  width: 250px;
+  height: 125px; }
 
-.gauge-mask {
+.gauge::before {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  left: 20px;
-  height: 80px;
-  background-color: #fff;
-  border-radius: 150px 150px 0 0; }
+  content: '';
+  width: 250px;
+  height: 125px;
+  border: 40px solid #e5e5e5;
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px; }
 
 .gauge-percentage {
   position: absolute;
-  top: 100px;
-  left: -200%;
-  width: 400%;
-  height: 400%;
-  margin-left: 100px;
-  background-color: #f9f963; }
-
-.gauge-percentage {
-  transform-origin: top center;
+  top: 100%;
+  left: 7px;
+  width: 235px;
+  height: 117px;
+  border: 25px solid #f9f963;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  transform-origin: center top;
   -webkit-transition: -webkit-transform 1s;
   -moz-transition: -moz-transform 1s;
   -ms-transition: -ms-transform 1s;
   -o-transition: -o-transform 1s;
   transition: transform 1s; }
 
+.gauge-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #fff; }
+
 .gauge-min {
-  float: left;
-  font-weight: bold; }
+  position: absolute;
+  top: 210px;
+  left: 90px; }
 
 .gauge-max {
-  float: right;
-  font-weight: bold; }
+  position: absolute;
+  top: 210px;
+  right: 90px; }
 
 .gauge-value {
   position: absolute;
   top: 45%;
-  left: 0;
-  width: 100%;
-  font-size: 32px;
-  font-weight: 700; }
+  left: 40%;
+  font-size: 48px; }
 
 .thermometer {
   width: 100px; }
