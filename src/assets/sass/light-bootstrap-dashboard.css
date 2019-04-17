@@ -3090,7 +3090,8 @@ a:hover {
   overflow: auto; }
 
 .attribute {
-  width: 100%; }
+  width: 100%;
+  word-break: break-all; }
 
 .fillHWLocate {
   width: 100%;
@@ -3187,18 +3188,21 @@ a:hover {
 .gauge-min {
   position: absolute;
   top: 210px;
-  left: 90px; }
+  left: 90px;
+  text-align: center; }
 
 .gauge-max {
   position: absolute;
   top: 210px;
-  right: 90px; }
+  right: 90px;
+  text-align: center; }
 
 .gauge-value {
   position: absolute;
   top: 45%;
   left: 40%;
-  font-size: 48px; }
+  font-size: 48px;
+  text-align: center; }
 
 .thermometer {
   width: 100px; }

@@ -39,11 +39,6 @@ class OSMap extends Component {
         if (latitude && longitude) {
           return true
         }
-
-        // TODO Remove mock data
-        featureObj.properties.status.latitude = 1.347
-        featureObj.properties.status.longitude = 103.841
-        return true
       }
 
       return false
@@ -89,7 +84,6 @@ class OSMap extends Component {
         <TileLayer
           url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        {/* TODO fix css for height */}
         {mappedDevices}
       </Map>
     );
