@@ -5,7 +5,7 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
-const { getUpdatedDevices } = require("./src/things");
+const { getUpdatedDevices } = require("./things");
 
 // TODO make port used from config file
 const PORT = 8080;
@@ -53,4 +53,4 @@ app.get('/devices', (req, res) => {
   });
 }); */
 
-server.listen(PORT);
+server.listen(PORT, () => console.log(`App running on port ${PORT}`));

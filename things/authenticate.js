@@ -1,5 +1,5 @@
 const request = require("request-promise-native");
-const config = require("../../config.json")
+const config = require("../config.json")
 
 class AuthToken {
   /*Intitally get the token and assign its value to the object*/

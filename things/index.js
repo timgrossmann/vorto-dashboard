@@ -1,8 +1,6 @@
 const request = require("request-promise-native");
 const AuthToken = require("./authenticate");
 
-const getDevices = require("../testDevices")
-
 const getReqOpts = (accessToken) => ({
   url: "https://things.eu-1.bosch-iot-suite.com/api/2/search/things",
   method: "GET",
@@ -19,27 +17,19 @@ function getUpdatedDevices() {
     authToken
       .getToken()
       .then(token => {
-        console.log(token)
+        /* console.log(token) */
 
         // request all things the user has created and have a policy
         request(getReqOpts(token))
           .then(res => {
             const devices = res.items
-            console.log(JSON.stringify(devices, null, 2))
+            /* console.log(JSON.stringify(devices, null, 2)) */
             console.log(`=> Successfully pulled ${devices.length} things.`)
             resolve(devices)
           })
       })
       .catch(err => reject(`Could not get token - ${err}`))
   })
-}
-
-function getUpdatedDevicesMock() {
-  console.log(getDevices())
-
-  return new Promise((resolve, reject) => {
-    resolve(getDevices())
-  });
 }
 
 module.exports = {
