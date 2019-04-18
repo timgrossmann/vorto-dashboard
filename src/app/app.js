@@ -11,8 +11,9 @@ import request from "request-promise-native"
 import indexRoutes from "../routes/index.jsx";
 import { getImgUrl } from "../util";
 
+// TODO make port used from config file
 const reqOpts = {
-    url: "http://localhost:8080/devices",
+    url: `http://localhost:${8080}/devices`,
     method: "GET",
     json: true
 }
