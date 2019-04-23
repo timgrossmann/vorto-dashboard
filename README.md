@@ -1,3 +1,5 @@
+> **Deprecated** - This project will be continued [here](https://github.com/eclipse/vorto-examples)
+
 # [Eclipse Vorto](https://github.com/eclipse/vorto) Device Dashboard
 React and NodeJS based Dashboard that helps quickly prototype IoT Device integrations with the Bosch IoT Suite. 
 Integrated IoT devices can be displayed and data visualized.
